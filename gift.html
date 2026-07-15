@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un pequeño regalo ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffb6c1,#ffd6e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+#gift{
+    font-size:120px;
+    cursor:pointer;
+    transition:.3s;
+    animation:flotar 2s infinite ease-in-out;
+}
+
+#gift:hover{
+    transform:scale(1.15) rotate(-5deg);
+}
+
+@keyframes flotar{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+#card{
+    position:absolute;
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    text-align:center;
+    display:none;
+    animation:aparecer .8s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+h1{
+    color:#ff4f8b;
+    margin-bottom:15px;
+}
+
+p{
+    color:#444;
+    line-height:1.7;
+    text-align:justify;
+}
+
+.money{
+    font-size:55px;
+    margin-top:20px;
+    animation:dinero 1s infinite alternate;
+}
+
+@keyframes dinero{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-8px);
+    }
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ff4f8b;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#e63d79;
+}
+</style>
+
+</head>
+<body>
+
+<div id="gift">🎁</div>
+
+<div id="card">
+<h1>Para ti ❤️</h1>
+
+<p>
+Realmente me hubiera gustado darte un regalo elaborado, pero siendo sincera,
+sentí que tal vez no fuera de tu agrado. Además, recordé lo que me decías,
+que a veces los regalos te incomodaban.
+
+Así que, pensando un poco en qué darte... se me ocurrió darte
+<strong>money</strong> jsjsjs. 💸
+
+Espero que este pequeño detalle te saque una sonrisa y puedas usarlo en algo
+que realmente te guste asi que me avishas cuando quieras tus 20 $.
+
+Con mucho cariño. ❤️
+</p>
+
+<div class="money">💵💵💵</div>
+
+<button onclick="lluvia()">Recibir regalo</button>
+
+</div>
+
+<script>
+
+const gift=document.getElementById("gift");
+const card=document.getElementById("card");
+
+gift.onclick=()=>{
+    gift.style.display="none";
+    card.style.display="block";
+}
+
+function lluvia(){
+
+    for(let i=0;i<40;i++){
+
+        let money=document.createElement("div");
+
+        money.innerHTML="💸";
+
+        money.style.position="absolute";
+        money.style.left=Math.random()*100+"vw";
+        money.style.top="-50px";
+        money.style.fontSize=(25+Math.random()*25)+"px";
+        money.style.transition="4s linear";
+
+        document.body.appendChild(money);
+
+        setTimeout(()=>{
+            money.style.top="110vh";
+            money.style.transform=`rotate(${Math.random()*720}deg)`;
+        },100);
+
+        setTimeout(()=>{
+            money.remove();
+        },4200);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
