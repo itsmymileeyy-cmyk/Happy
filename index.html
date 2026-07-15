@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz cumpleaños Santi 🎂</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@600&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:linear-gradient(135deg,#580808,#46020c,#9b2323);
+    font-family:Poppins,sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* PANTALLA INICIAL */
+
+.inicio{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.inicio h1{
+    font-size:50px;
+    color:#b31414;
+    animation:flotar 2s infinite;
+}
+
+
+.boton{
+    background:#800808;
+    color:white;
+    padding:18px 35px;
+    border-radius:50px;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 10px 20px #b11b1b;
+    transition:.4s;
+}
+
+.boton:hover{
+    transform:scale(1.1);
+}
+
+
+
+/* ELEMENTOS FLOTANTES */
+
+
+.corazon{
+    position:fixed;
+    bottom:-20px;
+    animation:subir 8s linear infinite;
+    font-size:25px;
+}
+
+
+@keyframes subir{
+
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+
+
+@keyframes flotar{
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+
+
+
+.contenido{
+    display:none;
+    padding:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+
+h2{
+    text-align:center;
+    color:#610808;
+    font-size:35px;
+}
+
+
+
+/* RAZONES */
+
+
+.razones{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.5s;
+animation:entrada 1s ease;
+}
+
+
+.card:hover{
+
+transform:rotate(3deg) scale(1.08);
+background:#ffe6f2;
+
+}
+
+
+.numero{
+
+font-size:40px;
+font-weight:bold;
+color:#e7a619;
+
+}
+
+
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* CARTA */
+
+
+.carta{
+
+margin-top:70px;
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 15px 30px #aaa;
+font-size:18px;
+line-height:1.8;
+
+animation:carta 2s;
+
+}
+
+
+@keyframes carta{
+
+from{
+
+transform:scale(.5) rotateX(90deg);
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
+
+
+
+.nombre{
+
+font-family:'Dancing Script';
+font-size:55px;
+text-align:center;
+color:#740202;
+
+}
+
+
+
+footer{
+
+text-align:center;
+padding:30px;
+color:#850808;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="inicio" id="inicio">
+
+<h1>🎂 Feliz cumpleaños Santi 🎂</h1>
+
+<p>Preparé algo especial para ti 💗</p>
+
+<button class="boton" onclick="abrir()">
+Abrir regalo 🎁
+</button>
+
+</div>
+
+
+
+
+<div class="contenido" id="contenido">
+
+
+<h2>✨ 18 razones por las que eres increíble ✨</h2>
+
+
+<div class="razones">
+
+
+<script>
+
+let razones=[
+"Tu perseverancia para lograr tus sueños.",
+"Tu forma única de ser.",
+"La fuerza que tienes para continuar.",
+"Los momentos increíbles que creas.",
+"La confianza que transmites.",
+"Tu manera de enfrentar retos.",
+"Todo lo que has aprendido.",
+"Tu corazón bonito.",
+"Tu capacidad por resolver todo.",
+"Tu autenticidad.",
+"Los pequeños detalles que te hacen especial.",
+"Por la capacidad de ser totalmente directo.",
+"Todo el esfuerzo que das.",
+"Los sueños que tienes.",
+"La persona en la que te estás convirtiendo.",
+"Tu valentía.",
+"Porque tienes claro lo que quieres.",
+"Porque eres simplemente tú."
+];
+
+
+document.write(
+razones.map((r,i)=>
+`
+<div class="card">
+<div class="numero">${i+1}</div>
+${r}
+</div>
+`
+).join("")
+);
+
+</script>
+
+
+</div>
+
+
+
+<div class="carta">
+
+<div class="nombre">
+Para Santi 💌
+</div>
+
+
+<p>
+
+Ya 18 años, el inicio de una nueva etapa la cual sin duda va a estar llena de experiencias nuevas, nuevos lugares, personas y en general el inicio de algo más grande.
+
+No dudes jamás que el futuro para ti va a brillar demasiado.
+
+Si algún momento llegas a tener un momento de duda o incertidumbre de ti, recuerda que siempre eres capaz de todo.
+
+Confía en ti y en todo lo grande que vas a lograr en tu vida.
+
+Siempre has tenido esa perseverancia de lograr lo que quieres.
+
+Jamás dudes de cómo eres.
+
+Recuerda siempre priorizarte a ti, tú eres lo importante en tu vida.
+
+Mil gracias por darme la oportunidad de conocerte y por contarme historias de tu vida.
+
+Por contarme de tu futuro, tener esa confianza de abrirte a contarme tus metas.
+
+Que realmente yo confio que vas a ser mucho mas grande de todo lo que has soñado.
+
+y ahora si , con toda la emoción del mundo
+
+Felizzzzz cumpleañosssssssssssss Santyyyyyyyyy 🎉
+
+Diosito te cuide siempre y te dé fuerza, fortaleza y muchos ánimos en todo .
+
+Incluso en los días difíciles recuerda que eres el mejor.
+
+Jamas te rindas , tu puedes con todo , incluso con presión igual sigues brillando.
+
+Recuerda siempre que incluso la mínima acción es un progreso.
+
+Asi que por todo lo que hoy te esfuerzas en un futuro lo veras reflejado.
+
+y hablando personalmente.
+
+Te quiero muchisimoooo mi personita vitamina :3
+
+Realmente deseo que todos tus cumpleaños sean los mejores , que la pases increible .
+
+Y si algun momento necesitas ayuda , recuerda que puedo ayudarte.
+
+Un abracito de osito virtual con muchísimo amor ❤️
+
+y de nuevito felizz cumpleañitos mi niño bonitoo , mi pequeñito ya crecio 🎉❤️
+
+</p>
+
+
+</div>
+
+
+<footer>
+Hecho con mucho amor 💗
+</footer>
+
+
+</div>
+
+
+
+
+
+<script>
+
+function abrir(){
+
+document.getElementById("inicio").style.display="none";
+
+document.getElementById("contenido").style.display="block";
+
+
+for(let i=0;i<30;i++){
+
+let c=document.createElement("div");
+
+c.className="corazon";
+
+c.innerHTML="💗";
+
+c.style.left=Math.random()*100+"%";
+
+c.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(c);
+
+}
+
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>
